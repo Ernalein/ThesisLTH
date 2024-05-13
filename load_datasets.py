@@ -37,8 +37,8 @@ def load_and_prep_svhn(batch_size, shuffle_size):
     num_classes = 10
     img_rows, img_cols = 32, 32
 
-    train = loadmat("data/train_32x32.mat")
-    test = loadmat("data/test_32x32.mat")
+    train = loadmat("data/SVHN/train_32x32.mat")
+    test = loadmat("data/SVHN/test_32x32.mat")
 
     X_train = np.array(train["X"])
     y_train = np.array(train["y"])
