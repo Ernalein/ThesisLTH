@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def get_pruning_rate(weights):
@@ -15,3 +16,20 @@ def get_pruning_rates(weights):
     for w in weights:
         pruning_rates.append(get_pruning_rate([w]))
     return pruning_rates
+
+def plot_losses(datasetname, pruning_name, losses, title):
+    fig= plt.figure(figsize=(10,6))
+    plt.title(title)
+    plt.xlabel("epochs")
+    plt.ylabel("Loss/Accuracy")
+    for key in losses.keys():
+         plt.plot(losses[key],label=key)
+    plt.legend()
+    plt.savefig(f"3b Plots/{datasetname}_{pruning_name}_losses.png")
+    plt.show()
+    
+def get_flat(arrays):
+    flat = []
+    for array in arrays:
+        flat.extend(array.flat)
+    return flat

@@ -122,6 +122,10 @@ def load_and_prep_cinic(batch_size):
     normalization_layer = tf.keras.layers.experimental.preprocessing.Rescaling(1./255)
     train_ds = train_ds.map(lambda x, y: (normalization_layer(x), y))
     val_ds = val_ds.map(lambda x, y: (normalization_layer(x), y))
+    
+    # one-hot encode labels
+    train_ds = train_ds.map(lambda img, target: (img, tf.one_hot(target, depth=10)))
+    val_ds = val_ds.map(lambda img, target: (img, tf.one_hot(target, depth=10)))
 
     AUTOTUNE = tf.data.AUTOTUNE
 
