@@ -7,7 +7,7 @@ from scipy.io import loadmat
 
 def load_and_prep_cifar(batch_size, shuffle_size):
     # load data set
-    (train_ds, test_ds), ds_info = tfds.load(name="cifar10", split=["train","test"], as_supervised=True, with_info=True)
+    (train_ds, test_ds), ds_info = tfds.load(name="cifar10", split=["train","test"], as_supervised=True, with_info=True,data_dir = "data/CIFAR")
     # tfds.show_examples(train_ds, ds_info)
     
     def prepare_cifar10_data(ds):
