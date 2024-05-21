@@ -1,0 +1,17 @@
+,variable,hypothesis,0
+0,prune_rate_in,H1,7
+1,prune_rate_in,H2,6
+2,prune_rate_in,H3,7
+3,prune_rate_in,H4,6
+4,prune_rate_out,H1,6
+5,prune_rate_out,H2,7
+6,prune_rate_out,H3,6
+7,prune_rate_out,H4,7
+8,sign_rate_in,H1,5
+9,sign_rate_in,H2,5
+10,sign_rate_in,H3,4
+11,sign_rate_in,H4,5
+12,sign_rate_out,H1,2
+13,sign_rate_out,H2,6
+14,sign_rate_out,H3,2
+15,sign_rate_out,H4,5
