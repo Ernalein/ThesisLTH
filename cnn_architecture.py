@@ -17,7 +17,7 @@ class CNN2Model(tf.keras.Model):
         self.dense2 = tf.keras.layers.Dense(256, activation="relu",kernel_initializer='glorot_uniform', bias_initializer=self.bias_in) # [batch_size,256]
         self.dense3 = tf.keras.layers.Dense(10, activation="softmax",kernel_initializer='glorot_uniform', bias_initializer=self.bias_in) # [batch_size,256]
 
-    @tf.function
+    #@tf.function
     def call(self, inputs):
         x = self.conv1(inputs)
         x = self.conv2(x)
