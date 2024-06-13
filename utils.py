@@ -36,10 +36,10 @@ def get_flat(arrays):
         flat.extend(array.flat)
     return flat
 
-def pretty_coll_sign_distr_plot(coll_sign_distr):
+def pretty_coll_sign_distr_plot(coll_sign_distr, alpha = 0.075):
 
     g = sns.PairGrid(coll_sign_distr, height=1.75)
-    g.map_lower(sns.scatterplot,alpha = 0.075)
+    g.map_lower(sns.scatterplot,alpha = alpha)
     g.map_upper(sns.kdeplot, fill=True)
     g.map_diag(sns.histplot)
 
