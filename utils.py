@@ -1,5 +1,7 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def get_pruning_rate(weights):
@@ -33,3 +35,12 @@ def get_flat(arrays):
     for array in arrays:
         flat.extend(array.flat)
     return flat
+
+def pretty_coll_sign_distr_plot(coll_sign_distr):
+
+    g = sns.PairGrid(coll_sign_distr, height=1.75)
+    g.map_lower(sns.scatterplot,alpha = 0.075)
+    g.map_upper(sns.kdeplot, fill=True)
+    g.map_diag(sns.histplot)
+
+    return g
