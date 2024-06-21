@@ -39,8 +39,8 @@ def get_flat(arrays):
 def pretty_coll_sign_distr_plot(coll_sign_distr, alpha = 0.075):
 
     g = sns.PairGrid(coll_sign_distr, height=1.75)
-    g.map_lower(sns.scatterplot,alpha = alpha)
+    g.map_lower(sns.scatterplot,alpha = alpha, palette="rocket", color="#421B45")
     g.map_upper(sns.kdeplot, fill=True, cmap="rocket")
-    g.map_diag(sns.histplot)
+    g.map_diag(sns.histplot, color="#A3195B", element="step")
 
     return g
